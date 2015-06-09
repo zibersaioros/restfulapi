@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rs.test.restfulapi.common.mapper.BookMapper">
+    <select id="select" resultType="com.rs.test.restfulapi.common.domain.Book">
+        SELECT
+        	ID
+        	, TITLE
+        	, CREATOR
+        	, TYPE
+        	, DATE
+        FROM
+        	BOOK
+    </select>
+    
+    <select id="selectByPrimaryKey" parameterType="Long" resultType="com.rs.test.restfulapi.common.domain.Book">
+        SELECT
+        	ID
+        	, TITLE
+        	, CREATOR
+        	, TYPE
+        	, DATE
+        FROM
+        	BOOK
+        WHERE
+        	ID = #{id}
+    </select>
+    
+    <insert id="insert" parameterType="com.rs.test.restfulapi.common.domain.Book">
+        INSERT INTO BOOK (
+        	ID
+        	, TITLE
+        	, CREATOR
+        	, TYPE
+        	, DATE
+        ) VALUES (
+        	#{id}
+        	, #{title}
+        	, #{creator}
+        	, #{type}
+        	, #{date}
+        )
+    </insert>
+    
+    <update id="updateByPrimaryKey" parameterType="com.rs.test.restfulapi.common.domain.Book">
+        UPDATE 
+        	BOOK
+        SET
+        	TITLE = #{title}
+        	, CREATOR = #{creator}
+        	, TYPE = #{type}
+        	, DATE = #{date}
+        WHERE
+        	ID = #{id}
+    </update>
+    
+    <delete id="deleteByPrimaryKey" parameterType="Long">
+        DELETE
+        FROM
+       		BOOK
+        WHERE
+        	ID = #{id}
+    </delete>
+</mapper>
