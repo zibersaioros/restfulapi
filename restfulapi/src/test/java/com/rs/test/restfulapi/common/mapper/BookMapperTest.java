@@ -1,4 +1,4 @@
-package restfulapi;
+package com.rs.test.restfulapi.common.mapper;
 
 import static org.junit.Assert.*;
 
@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rs.test.restfulapi.common.config.AppConfig;
 import com.rs.test.restfulapi.common.domain.Book;
